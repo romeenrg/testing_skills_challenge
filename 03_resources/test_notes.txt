@@ -1,0 +1,47 @@
+Challenge notes
+Understanding the application + scenarios 
+
+
+FUNCTIONALITIES AND EXPECTATIONS:
+
+
+1. filename in original > file name in droplist > *file is dropped so will not appear in finals* 
+2. filename in original > file name in allowlist > *file will appear in finals* 
+3. filename in original > file name in allowlist > filename in updates > *file from updates appears in finals*
+4. filename in original > file name in droplist > filename in updates > *file from updates appears in finals*
+5. filename not in original > file name in droplist (has no effect tho) > filename in updates > *file from updates appears in finals*
+6. file name in original > different file name in droplist > *file from original appears in finals*
+7. file name in original > different file name in allowlist > *file from original appears in finals*
+
+
+
+
+Possible errors
+
+1. file name in neither allow list or drop list
+2. folders for original or updates not found
+3. documents not in correct format
+4. more than one files? what are the expectations\
+5. allow 
+
+Building python scripts
+
+* had to add droplist file? is it always meant to be entered manually (maybe code to interchange ) 
+* built 4 methods 
+    * adding file to originals
+    * adding file to updates
+    * adding file to droplist
+    * adding file to allow list
+* need:
+    * putting in data 
+
+
+
+
+Test cases/Exploratory notes
+
+cannot perform if both drop list and allow list are present
+has to follow format or will give error code
+
+
+Bugs Founds
