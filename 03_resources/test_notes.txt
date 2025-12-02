@@ -4,7 +4,7 @@ Understanding the application + scenarios
 
 FUNCTIONALITIES AND EXPECTATIONS:
 
-
+scenarios:
 1. filename in original > file name in droplist > *file is dropped so will not appear in finals* 
 2. filename in original > file name in allowlist > *file will appear in finals* 
 3. filename in original > file name in allowlist > filename in updates > *file from updates appears in finals*
@@ -12,36 +12,164 @@ FUNCTIONALITIES AND EXPECTATIONS:
 5. filename not in original > file name in droplist (has no effect tho) > filename in updates > *file from updates appears in finals*
 6. file name in original > different file name in droplist > *file from original appears in finals*
 7. file name in original > different file name in allowlist > *file from original appears in finals*
+8. file name in original > no allowlist or droplist > *error*
+9. no allowlist or droplist > filename in updated > *error*
+10. filename in original > no allowlist or droplist > filename in updated > *error*
+11. filename in original > different name in allowlist or droplist > filename in updated > *error*
+
 
 
 
 
 Possible errors
 
-1. file name in neither allow list or drop list
-2. folders for original or updates not found
-3. documents not in correct format
-4. more than one files? what are the expectations\
-5. allow 
-
-Building python scripts
-
-* had to add droplist file? is it always meant to be entered manually (maybe code to interchange ) 
-* built 4 methods 
-    * adding file to originals
-    * adding file to updates
-    * adding file to droplist
-    * adding file to allow list
-* need:
-    * putting in data 
-
+- file name in neither allow list or drop list
+- folders for original or updates not found
+- documents not in correct format
+- more than one files? what are the expectations\
+- allowed to be in finals if its not in either allow or drop??
+- formatting of the allow/droplist file 
 
 
 
 Test cases/Exploratory notes
 
+source into venv first - install Faker
+then run test_document_updater.py to get the files generated
+then run document_updater.py to get the program to run - THIS IS WHERE YOU VERIFY RESULTS
+
+
 cannot perform if both drop list and allow list are present
 has to follow format or will give error code
+no message to say that original has been dropped 
 
 
-Bugs Founds
+
+Areas to test - 
+- name of file
+- data in file (name and address, allowdroplist)
+- folders present/or not (original, updates)
+- folders content (different files)
+- allowlist drop list present
+- in/valid data in files
+- name different to the file name
+
+1. filename in original > file name in droplist > *file is dropped so will not appear in finals* 
+Data generated - 
+filename = Bailey-Birch
+name = Lucy Bailey-Birch
+address =   2 Bruce vista
+            Gilbertbury
+            S41 3ZX
+
+droplist - Bailey-Birch
+
+RESULTS - nothing in finals made
+
+
+2. filename in original > file name in allowlist > *file will appear in finals* 
+
+Data generated -
+filename = Archer
+name = Jonathan Archer
+address = Studio 0
+Harding glen
+Bellchester
+RM5M 7YY
+
+allowlist - Archer
+
+RESULTS - in finals directory
+Jonathan Archer
+Studio 0
+Harding glen
+Bellchester
+RM5M 7YY
+
+
+3. filename in original > file name in allowlist > filename in updates > *file from updates appears in finals*
+Data generated - 
+filename = Horton
+name = Christian Horton
+address =   Flat 0
+            Frances pass
+            Port Christine
+            M6 1QP
+
+> allow list - Horton
+
+updated file:
+name = Christian Horton
+address =   120 Nigel plains
+            Mossstad
+            CT91 6RD
+
+RESULTS - in the finals directory
+Christian Horton
+120 Nigel plains
+Mossstad
+CT91 6RD
+
+4. filename in original > file name in droplist > filename in updates > *file from updates appears in finals*
+Data generated - 
+filename = Stone
+name = Mr Rhys Stone
+address =   Studio 3
+            Melanie mall
+            Chandlerburgh
+            G6 1RB
+
+>droplist - Stone
+
+updated file:
+Name = Mr Rhys Stone
+Address:    2 Smith freeway
+            Port Wendy
+            B89 6ZF
+
+RESULTS - in the finals directory
+Mr Rhys Stone
+2 Smith freeway
+Port Wendy
+B89 6ZF
+
+
+5. filename not in original > file name in droplist (has no effect tho) > filename in updates > *file from updates appears in finals*
+Data generated - 
+filename = Wilkinson-Bird
+name = Victor Wilkinson-Bird
+address =   Flat 67Q
+            Roberts springs
+            Lake Paulinebury
+            N8 9ZD
+droplist - Wilkinson-Bird
+
+RESULTS - in finals directory
+Victor Wilkinson-Bird
+Flat 67Q
+Roberts springs
+Lake Paulinebury
+N8 9ZD
+
+6. file name in original > different file name in droplist > *file from original appears in finals*
+Data-generated - 
+filename = Foster
+name = Sara Foster
+address =   Studio 5
+            Patel prairie
+            East Iainmouth
+            RG95 7ZZ
+droplist - "Hello"
+
+Results - in finals 
+
+Sara Foster
+Studio 5
+Patel prairie
+East Iainmouth
+RG95 7ZZ
+
+
+
+
+***Bugs Founds***
