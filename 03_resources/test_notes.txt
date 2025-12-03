@@ -16,7 +16,9 @@ scenarios:
 9. no allowlist or droplist > filename in updated > *error*
 10. filename in original > no allowlist or droplist > filename in updated > *error*
 11. filename in original > different name in allowlist or droplist > filename in updated > *error*
-
+12. multiple files in original > same files in drop > same files in updated 
+13. multiple files in original > same files in update > no files in updated
+14. 
 
 
 
@@ -221,6 +223,44 @@ combines the two
 12. filename in original > different name allowlist > filename in updated >
 only the updated files show
 
+
+13. Multiple files in original > all files in droplist > filenames in updated
+All the updated files in finals folder
+
+
+14. Multiple files in original > all files in droplist >
+No files in the finals folder
+
+
+15. Multiple files in original > all files in allowlist > 
+All original files in finals folder
+
 ***Bugs Founds***
 - 11 - if the original is not dropped when a drop list is present, it will merge with its updated file to cause formatting issue
-- filenames 
+- removes punctuation from filename of double barrelled named or punctuation
+- hidden files in original or updates do not allow the program to run (should error like ERROR: document " .lol " doesn't contain an appropriately formatted address)
+- if there are multiple originals, allow list that has 3 or more lines(one with the updated file), and updated files with certain of those originals
+what appears in the finals folder will ONLY be the updated files
+
+e.g 
+
+original -          
+Baker
+Davis
+Hardy
+Jenkins
+Jones
+Riley
+
+allowlist -
+Baker
+Jenkins 
+Jones
+
+updates - 
+Baker
+Hardy
+
+**finals**
+Baker 
+Hardy

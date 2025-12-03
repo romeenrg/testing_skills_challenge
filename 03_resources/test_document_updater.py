@@ -8,7 +8,8 @@ names = []
 filenames = []
 
 Faker.seed(1)
-for i in range(1):  # Change 2 to however many you need
+
+for i in range(5):  # Change x to however many you need
     name = fake.name()
     names.append(name)
     filenames.append(name.split()[-1])
@@ -21,14 +22,24 @@ for i in range(1):  # Change 2 to however many you need
 #just code freestyle to generate data
 test = Updater()
 
+for i in range(len(filenames)):
+    test.add_file_to_originals(filenames[i], names[i], fake.address())
+
+    test.add_to_allowlist(filenames)
+    # test.add_to_droplist(filenames)
+
+
+    test.add_file_to_updates(filenames[i], names[i], fake.address())
+
+
 # test.clear_filenames(filenames)
-test.add_file_to_originals(filenames[0], names[0], fake.address())
 
 
-test.add_file_to_updates(filenames[0], names[0], fake.address())
-test.add_to_allowlist("HELLO")
 
-# test.clear_filenames(filenames)
+
+
+
+
 
 
 

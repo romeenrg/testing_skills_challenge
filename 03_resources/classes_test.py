@@ -36,35 +36,30 @@ class Updater():
                 os.remove(self.file_path_drop)
         
         with open(self.file_path_allow, 'w') as file:
-                file.writelines(f"{name}\n" for name in names) 
-        return 
+                file.writelines(f"{name}\n" for name in names)
+            
     
 
-    # def clear_filenames(self, filenames):
+    def clear_filenames(self, filenames):
 
-    #     if os.path.exists(self.file_path_allow):
-    #             os.remove(self.file_path_allow)
+        if os.path.exists(self.file_path_allow):
+                os.remove(self.file_path_allow)
 
-    #     if os.path.exists(self.file_path_drop):
-    #             os.remove(self.file_path_drop)
+        if os.path.exists(self.file_path_drop):
+                os.remove(self.file_path_drop)
 
-    #     for i in range(len(filenames)):
-    #         filepath1 = "/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/target_directory/originals/" + filenames[i]
-    #         if os.path.exists(filepath1):
-    #             os.remove(filepath1)
+        for i in range(len(filenames)):
+            filepath1 = "/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/target_directory/originals/" + filenames[i]
+            if os.path.exists(filepath1):
+                os.remove(filepath1)
 
-    #         filepath2 = "/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/target_directory/updates/" + filenames[i]
-    #         if os.path.exists(filepath2):
-    #             os.remove(filepath2)
+            filepath2 = "/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/target_directory/updates/" + filenames[i]
+            if os.path.exists(filepath2):
+                os.remove(filepath2)
 
             
 
-            # finalspath = "/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/target_directory/finals/" + filenames[i]
-            # if os.path.exists(finalspath):
-            #     os.remove(finalspath)
-            
-            
-            # os.remove("/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/target_directory/allowlist")
-            # os.remove("/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/target_directory/droplist")
-
+            finalspath = "/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/target_directory/finals/" + filenames[i]
+            if os.path.exists(finalspath):
+                os.remove(finalspath)
 
