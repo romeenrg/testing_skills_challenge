@@ -23,21 +23,21 @@ class Updater():
 
 
 
-    def add_to_droplist (self, f):
+    def add_to_droplist (self, *names):
             if os.path.exists(self.file_path_allow):
                 os.remove(self.file_path_allow)
 
             
             with open(self.file_path_drop, 'w') as file:
-                file.write(f)
+                file.writelines(f"{name}\n" for name in names) 
             return  
 
+ 
 
-
-    def add_to_allowlist (self, f):
+    def add_to_allowlist (self, *names):
         if os.path.exists(self.file_path_drop):
                 os.remove(self.file_path_drop)
         
         with open(self.file_path_allow, 'w') as file:
-                file.write(f) 
+                file.writelines(f"{name}\n" for name in names) 
         return 
