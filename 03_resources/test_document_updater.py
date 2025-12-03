@@ -4,29 +4,31 @@ from classes_test import Updater
 #source into venv
 
 fake = Faker("en_UK")
-seed = 1
-
-
 names = []
 filenames = []
 
-for i in range(10):  # Change 2 to however many you need
+Faker.seed(1)
+for i in range(1):  # Change 2 to however many you need
     name = fake.name()
     names.append(name)
     filenames.append(name.split()[-1])
 
-Faker.seed()
-address = fake.address()
+# address = fake.address()
 
-print(names)
-print(filenames)
+# print(names)
+# print(filenames)
+
+#just code freestyle to generate data
+test = Updater()
+
+# test.clear_filenames(filenames)
+test.add_file_to_originals(filenames[0], names[0], fake.address())
 
 
-print(names[0])
-print(filenames[0])
+test.add_file_to_updates(filenames[0], names[0], fake.address())
+test.add_to_allowlist("HELLO")
 
-print(names[1])
-print(filenames[1])
+# test.clear_filenames(filenames)
 
 
 

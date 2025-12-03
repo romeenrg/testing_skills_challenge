@@ -170,6 +170,57 @@ East Iainmouth
 RG95 7ZZ
 
 
+7. file name in original > different file name in allowlist > 
+original file is not in allowlist so does not make it to the finals folder
 
+
+8. file name in original > no allowlist or droplist > *error*
+ERROR: no droplist nor allowlist found in target directory
+
+
+
+9. no allowlist or droplist > filename in updated > *error*
+ERROR: no droplist nor allowlist found in target directory
+
+
+10. filename in original > no allowlist or droplist > filename in updated > *error*
+ERROR: no droplist nor allowlist found in target directory
+
+
+11. filename in original > different name droplist > filename in updated > 
+if original is longer than updated, the file in the finals with add the extra lines or extra after the updated in the finals 
+
+e.g
+
+droplist = hello
+
+>original
+Shirley Smith
+Studio 05
+Wright forks•fggdgdfgdgdf• this will be extra
+Port Antony
+•N40 6GT• this will be extra
+
+>updated
+Shirley Smith
+Studio 88A
+Campbell circle
+Waynehaven
+
+>finals 
+Shirley Smith
+Studio 88A
+Campbell circledgdfgdgdf
+Waynehaveny
+N40 6GT
+
+combines the two 
+
+
+
+12. filename in original > different name allowlist > filename in updated >
+only the updated files show
 
 ***Bugs Founds***
+- 11 - if the original is not dropped when a drop list is present, it will merge with its updated file to cause formatting issue
+- filenames 
