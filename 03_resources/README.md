@@ -1,19 +1,19 @@
-#CHALLENGE
+# CHALLENGE
 
-###Overview
+### Overview
 Overall, the program was easy to understand and use. With the use of single files, the functionality worked the way it was intended to with all the scenarios carrying out as expected.
 However, with the addition of other valid files - problems arose.
 
-###Feedback
+### Feedback
 - There was no output to let the user know that files had been created in finals folder
 - Following on from above, there was no output for the user when NO files had been created in the finals folder
 
-###Bugs -
+### Bugs -
 
 Severity: 1 (high) - 5 (trivial)
 Priority: 1 (high) - 3 (low)
 
-1. Removal of punctuation when moving to finals directory
+#### 1. Removal of punctuation when moving to finals directory
 
 *Description of bug*
 When the user has a filename (surname) that contains punctuation such as dashes or apostrophes, when it gets added to the finals directory - the punctuation is removed. This happens whether the file is present in just originals, just updates or both and it can be updated into the finals folder.
@@ -31,16 +31,14 @@ The filename should be kept the same and consitent throughout
 4. Run the program
 5. Observe the filename of the file in the finals folder
 
-*Severity*
-2
+*Severity* - 2
 
-*Priority*
-1
+*Priority* - 1
 
 *Media*
 
 
-2. Hidden files in original or updates folder stop program running
+#### 2. Hidden files in original or updates folder stop program running
 
 *Description of bug*
 When there is a hidden file (.___ files), the program still runs through them and causes an error code to occur.
@@ -48,7 +46,7 @@ When there is a hidden file (.___ files), the program still runs through them an
 *Observed*
 Error code produced 
 > Traceback (most recent call last):
->File "/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/document_updater.py", ??>line 59, in <module>
+>File "/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/document_updater.py", ??line 59, in <module>
 >    contents = f.readlines()
 >               ^^^^^^^^^^^^^
 >  File "<frozen codecs>", line 322, in decode
@@ -65,16 +63,14 @@ A more userfriendly error message or for the program to ignore hidden files
 4. Create a valid allow list with that filename present
 4. Run the program
 
-*Severity*
-1
+*Severity* - 1
 
-*Priority*
-2
+*Priority* - 2
 
 *Media*
 
 
-3. 
+#### 3. 
 
 *Description of bug*
 
@@ -93,7 +89,7 @@ A more userfriendly error message or for the program to ignore hidden files
 *Media*
 
 
-4. 
+#### 4. 
 
 *Description of bug*
 
