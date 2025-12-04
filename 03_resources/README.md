@@ -16,15 +16,19 @@ Priority: 1 (high) - 3 (low)
 #### 1. Removal of punctuation when moving to finals directory
 
 *Description of bug*
+
 When the user has a filename (surname) that contains punctuation such as dashes or apostrophes, when it gets added to the finals directory - the punctuation is removed. This happens whether the file is present in just originals, just updates or both and it can be updated into the finals folder.
 
 *Observed*
+
 The filename has the punctuation removed 
 
 *Expected*
+
 The filename should be kept the same and consitent throughout
 
 *Steps to reproduce*
+
 1. Create a valid file in originals folder with the filename "O'Neil-Smith"
 2. Create an allowlist file with just the name "O'Neil-Smith" on line 1
 3. (OPTIONAL) Create a valid file in updates folder with the filename "O'Neil-Smith"
@@ -41,6 +45,7 @@ The filename should be kept the same and consitent throughout
 #### 2. Hidden files in original or updates folder stop program running
 
 *Description of bug*
+
 When there is a hidden file (.___ files), the program still runs through them and causes an error code to occur.
 
 *Observed*
