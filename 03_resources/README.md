@@ -49,6 +49,7 @@ The filename should be kept the same and consitent throughout
 When there is a hidden file (.___ files), the program still runs through them and causes an error code to occur.
 
 *Observed*
+
 Error code produced 
 > Traceback (most recent call last):
 >File "/Users/romeenrg/Projects/Testing_skills/challenge/03_resources/document_updater.py", ??line 59, in <module>
@@ -58,10 +59,12 @@ Error code produced
 > UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 558: invalid start byte
 
 *Expected*
+
 A more userfriendly error message or for the program to ignore hidden files
 
 
 *Steps to reproduce*
+
 1. Create a valid file in originals 
 2. Delete that file using "Finder" application (on Mac) - this creates the .DS file which causes the error
 3. Create a new valid file in originals
@@ -78,10 +81,12 @@ A more userfriendly error message or for the program to ignore hidden files
 #### 3. Original file merges with Update file for Finals file when not listed in droplist
 
 *Description of bug*
+
 When there is an original file version and an updated file version, they should not overwrite each other or effect each other. However, when the filename is NOT present in a droplist file, the original file (if it is longer on lines 4/5) will have its content added onto the updated file.
 
 
 *Observed*
+
 e.g
 > droplist = hello
 
@@ -128,9 +133,11 @@ Should be just the updated file
 #### 4. Files in original & allowlist do not make it to the final folder (when an updated file is present in allowlist)
 
 *Description of bug*
+
 An original file that is also in the allow list (meaning it should be present in the finals folder when program runs) does not appear in the finals folder WHEN an updated file is present in both originals and allowlist. This means that files are not showing up in finals when they are supposed to.
 
 *Observed*
+
 To illustrate it easier, the folders can be shown section by section.
 
 > originals folder - 5 
@@ -153,6 +160,7 @@ To illustrate it easier, the folders can be shown section by section.
 *note that Jones is present in both originals and allowlist (can interchange with Jenkins or even include both and observed results are the same)*
 
 RESULTS IN FINALS 
+
 > finals folder 
 > Jenkins
 > Jones
@@ -176,6 +184,7 @@ only the updates files are present
 
 
 RESULTS IN FINALS 
+
 > finals folder 
 > Jenkins
 > Jones
@@ -184,6 +193,7 @@ RESULTS IN FINALS
 
 
 *Steps to reproduce*
+
 1. Create 5 valid files in Originals folder
 2. Add 3 of those valid files into allow list
 3. Create 2 updated files with same filename as 2 files from Original folder (make sure at least ONE of these files is in allow list)
