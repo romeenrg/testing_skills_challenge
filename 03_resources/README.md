@@ -8,7 +8,7 @@ However, with the addition of other valid files - problems arose.
 - There was no output to let the user know that files had been created in finals folder
 - Following on from above, there was no output for the user when NO files had been created in the finals folder
 
-### Bugs -
+### Bugs 
 
 Severity: 1 (high) - 5 (trivial)
 Priority: 1 (high) - 3 (low)
@@ -70,39 +70,122 @@ A more userfriendly error message or for the program to ignore hidden files
 *Media*
 
 
-#### 3. 
+#### 3. Original file merges with Update file for Finals file when not listed in droplist
 
 *Description of bug*
+When there is an original file version and an updated file version, they should not overwrite each other or effect each other. However, when the filename is NOT present in a droplist file, the original file (if it is longer on lines 4/5) will have its content added onto the updated file.
+
 
 *Observed*
+e.g
+> droplist = hello
 
+>original
+>Shirley Smith
+>>Studio 05
+>Wright forks and Extra 
+>Port Antony
+>•N40 6GT
+
+>updated
+>Shirley Smith
+>Studio 88A
+>Campbell circle
+>Waynehaven
+
+
+>finals 
+>Shirley Smith
+>Studio 88A
+>Campbell circled Extra (d extra is added)
+>Waynehaveny
+>N40 6GT (this line is added)
 
 *Expected*
+
+Should be just the updated file
+>Shirley Smith
+>Studio 88A
+>Campbell circle
+>Waynehaven
 
 
 *Steps to reproduce*
 
-*Severity*
+*Severity* - 1
 
-*Priority*
+*Priority* - 1
+
 
 *Media*
 
 
-#### 4. 
+#### 4. Files in original & allowlist do not make it to the final folder (when an updated file is present in allowlist)
 
 *Description of bug*
+An original file that is also in the allow list (meaning it should be present in the finals folder when program runs) does not appear in the finals folder WHEN an updated file is present in both originals and allowlist. This means that files are not showing up in finals when they are supposed to.
 
 *Observed*
+To illustrate it easier, the folders can be shown section by section.
+
+> originals folder - 5 
+> Baker
+> Hardy
+> Jenkins
+> Jones
+> Riley
+
+> allowlist - 
+> Baker
+> Hardy
+> Jones
+
+
+> updates folder - 2
+> Jenkins
+> Jones
+> (Jenkins)
+*note that Jones is present in both originals and allowlist (can interchange with Jenkins or even include both and observed results are the same)*
+
+RESULTS IN FINALS 
+> finals folder 
+> Jenkins
+> Jones
+
+only the updates files are present
 
 
 *Expected*
 
+> originals folder - 5 
+> Baker
+> Hardy
+> Jenkins
+> Jones
+> Riley
+
+> allowlist - 
+> Baker
+> Hardy
+> Jones
+
+
+RESULTS IN FINALS 
+> finals folder 
+> Jenkins
+> Jones
+> Baker 
+*Baker's original file should be present as it is in the allowlist*
+
 
 *Steps to reproduce*
+1. Create 5 valid files in Originals folder
+2. Add 3 of those valid files into allow list
+3. Create 2 updated files with same filename as 2 files from Original folder (make sure at least ONE of these files is in allow list)
+4. Run program
 
-*Severity*
+*Severity* - 2
 
-*Priority*
+*Priority* - 2
 
 *Media*
